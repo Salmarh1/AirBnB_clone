@@ -1,0 +1,25 @@
+U
+
+    +üôa§	  ã                   @   sª   d Z ddlZddlZddl Z dd lmZ ddlmZ ddlm	Z	 ddl
+mZ ddlm
+Z
+ ddlmZ dd	lmZ dd
+lmZ ddlZG dd„ dejƒ Zed
+kr¦e ¡  dS )z+Module that holds tests for file_storage.pyé    N)ÚFileStorage)Ú	BaseModel)ÚAmenity)ÚCity)ÚPlace)ÚReview)ÚState)ÚUserc                   @   s8   e Zd ZdZ dd „ Zdd„ Zdd„ Zdd	„ Zd
+d„ ZdS )
+ÚTestFileStoragez Class to test file_storagec                  C   s\   t ƒ | _tƒ | _ tƒ | _tƒ | _tƒ | _	t
+ƒ | _tƒ | _
+tƒ | _tj d¡rNn
+t d¡ dS ) zSets up the class testú	file.jsonN)r    Úb1r   Úa1r   Úc1r   Úp1r   Úr1r   Ús1r	   Úu1r   ÚstorageÚosÚpathÚexistsÚmknod©Úself© r    úE/root/AirBnB_clone/tests/test_models/test_engine/test_file_storage.pyÚsetUp   s     zTestFileStorage.setUpc                  C   s:   | ` | `| `| ` | `| `| `| `tj	 
+d¡r6t d¡ dS ) z"Tears down the testing environmentr   N)r   r
+   r   r   r   r   r   r   r   r   r   Úremover   r    r    r   ÚtearDown$   s     zTestFileStorage.tearDownc                 C   s   |   | j ¡ ¡ dS )z!Checks storage.all() is not emptyN) ÚassertIsNotNoner   Ú allr   r    r    r   Útest_storage_all2   s     z TestFileStorage.test_storage_allc                 C   s   |   d | jj j| jj¡tj ¡ ¡ |   d | j	j j| j	j¡tj ¡ ¡ |   d | j
+j j| j
+j¡tj ¡ ¡ |   d | jj j| jj¡tj ¡ ¡ |   d | jj j| jj¡tj ¡ ¡ |   d | j
+j j| j
+j¡tj ¡ ¡ |   d | jj j| jj¡tj ¡ ¡ dS ) z4Checks to make sure storage.all() contains instancesz{}.{}N)ÚassertInÚformatr   Ú	__class__Ú__name__ÚidÚmodelsr   r    r
+   r   r   r   r   r   r   r    r    r   Útest_storage_all_contents7   s*     ÿÿÿÿÿÿÿz)TestFileStorage.test_storage_all_contentsc                 C   s    |   tt| j  ¡ ƒ¡ dS )z Checks the type of storage.all()N)ÚassertEqualÚdictÚtyper   r    r   r    r    r   Útest_storage_all_typeI   s     z%TestFileStorage.test_storage_all_typeN)	r%   Ú
+__module__Ú__qualname__Ú__doc__r    r   r!   r(   r,   r    r    r    r   r
+      s   r
+   Ú__main__)r/   ÚunittestÚjsonr'   Ú models.engine.file_storager   Úmodels.base_modelr    Úmodels.amenityr   Úmodels.cityr   Úmodels.placer   Ú
+models.reviewr   Úmodels.stater   Úmodels.userr	   r   ÚTestCaser
+   r%   Úmainr    r    r    r   Ú<module>   s    =
